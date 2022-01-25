@@ -1,5 +1,3 @@
-
-
 function WelcomeFunc({ name, children }) {
   return (
     <div>
@@ -8,7 +6,6 @@ function WelcomeFunc({ name, children }) {
     </div>
   );
 }
-
 class Welcome extends React.Component {
   render() {
     return (
@@ -46,7 +43,6 @@ class Clock extends React.Component {
     );
   }
 }
-
 class Incrementer extends React.Component {
   constructor(props) {
     super(props);
@@ -85,10 +81,6 @@ toggle() {
     this.setState((state, props) => ({ n: 0 }));
     this.play()
 }
-
-event () {
-
-}
   render() {
     const method = this.state.timer ? this.pause : this.play
     const label = this.state.timer ? this.pause : this.play
@@ -111,12 +103,10 @@ event () {
     );
   }
 }
-
 Incrementer.defaultProps = {
   start: 0,
   step: 1,
-};
-
+}
 class ManualIncrementer extends React.Component {
   constructor(props) {
     super(props);
@@ -138,17 +128,24 @@ class ManualIncrementer extends React.Component {
   }
 }
 
-function Home() {
-  return (
-    <div>
-      {/* <Welcome name="Dorothée"/> */}
-      <Welcome name="Jean" />
-      <Clock />
-      <Incrementer start={496}/>
-      {/* <Incrementer start={20} step={10}/> */}
-      {/* <ManualIncrementer /> */}
-    </div>
-  );
+class Home extends React.Component { // Création d'un formulaire : récupération des données dans les inputs
+    render () {
+        return <div><label htmlFor="nom">Mon nom</label><input type="texte" id="nom" name="nom"></input></div>
+    }
 }
+
+
+// function Home() {
+//   return (
+//     <div>
+//       {/* <Welcome name="Dorothée"/> */}
+//       <Welcome name="Jean" />
+//       <Clock />
+//       <Incrementer start={496}/>
+//       {/* <Incrementer start={20} step={10}/> */}
+//       {/* <ManualIncrementer /> */}
+//     </div>
+//   );
+// }
 
 ReactDOM.render(<Home />, document.querySelector("#app"));

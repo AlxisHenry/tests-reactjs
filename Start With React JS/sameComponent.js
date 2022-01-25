@@ -1,7 +1,5 @@
 class ComponentWelcome extends React.Component {
 
-
-
     render() {
 
         return  <div>
