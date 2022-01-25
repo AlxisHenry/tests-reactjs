@@ -1,3 +1,5 @@
+
+
 function WelcomeFunc({ name, children }) {
   return (
     <div>
@@ -83,20 +85,28 @@ toggle() {
     this.setState((state, props) => ({ n: 0 }));
     this.play()
 }
+
+event () {
+
+}
   render() {
     const method = this.state.timer ? this.pause : this.play
     const label = this.state.timer ? this.pause : this.play
+    const stylebtn = {
+        color:"red", backgroundColor: "gray"
+    }
     return (
       <div>
         Valeur: {this.state.n} <br></br>
             {/* {this.state.timer ? 
                     <button onClick={this.pause.bind(this)}>Pause</button> :
                     <button onClick={this.play.bind(this)}>Play</button>} */}
-            <button onClick={this.toggle}>
+            <button style={stylebtn} onClick={this.toggle}>
                     {this.label()}
             </button>           
-            <button onClick={this.reset}>Reset
+            <button style={stylebtn} onClick={this.reset}>Reset
             </button>
+            {this.state.n > 500 ? <span>500 points</span> : null}
       </div>
     );
   }
@@ -134,7 +144,7 @@ function Home() {
       {/* <Welcome name="Dorothée"/> */}
       <Welcome name="Jean" />
       <Clock />
-      <Incrementer start={10} />
+      <Incrementer start={496}/>
       {/* <Incrementer start={20} step={10}/> */}
       {/* <ManualIncrementer /> */}
     </div>
