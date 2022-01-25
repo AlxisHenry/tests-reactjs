@@ -44,6 +44,28 @@ class Clock extends React.Component { // Date dynamique
     }
 }
 
+class Incrementer extends React.Component {
+    constructor (props) {
+        super(props)
+        this.state = {n: props.start}
+        this.timer = null
+    }
+    componentDidMount() {
+        window.setInterval(this.increment.bind(this), 400)
+    }
+    componentwillUnmout() {
+        window.clearInterval(this.timer)
+    }
+    increment() {
+        // this.setState({n: this.state.n + 1}) 
+        this.setState(function (state, props) {
+            return {n: state.n + 9}
+        })
+    }
+    render() {
+        return <div> {this.state.n} </div>
+    }   
+}
 
 function Home ()
  {
@@ -51,6 +73,7 @@ function Home ()
          <Welcome name="Dorothée"/>
          <Welcome name="Jean"/>
          <Clock/>
+         <Incrementer start={10}/>
      </div>
  }
 
