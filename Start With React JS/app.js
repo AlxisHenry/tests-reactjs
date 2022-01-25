@@ -1,10 +1,23 @@
 let n = 0;
 
+function number(n) {
+    return n.toString().padStart(2, '0')
+}
 function render() {
-    const title = React.createElement("h1", {}, 'Bonjour tous le monde', React.createElement('span', {}, n))
-
-// console.log(title);
-
+const items = [
+    'Tache 1',
+    'Tache 2',
+    'Tache 3'
+] 
+const li = items.map((item, k) => <li key={k}>{item}</li>)
+// On ne peut pas mettre deux attributs adjacents
+    const title = <React.Fragment><h1 className="react-class-name" id="react-id"> Bnjour les gens 
+        <span>{n}</span>
+    </h1>
+    <ul>
+        {li}
+    </ul>
+    </React.Fragment> 
 ReactDOM.render(title, document.querySelector('#app'))
 
 }
