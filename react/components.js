@@ -43,7 +43,7 @@ class Clock extends React.Component {
     );
   }
 }
-class Incrementer extends React.Component {
+class IncremeMnter extends React.Component {
   constructor(props) {
     super(props);
     this.state = { n: props.start, timer: null };
@@ -232,4 +232,4 @@ class Home extends React.Component {
   }
 }
 
-ReactDOM.render(<Home />, document.querySelector("#app"));
+ReactDOM.render(<Welcome name="test" />, document.querySelector("#app"));
